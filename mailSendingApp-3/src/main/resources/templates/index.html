@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body style="text-align: center">
+
+    <!-- navbar starts -->
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Registration form </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+     
+    <!--   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  --> 
+    </form>
+    
+    
+  </div>
+</nav> <br />
+<!-- navbar ends -->
+
+<form th:action="@{/register" th:object="${u}" method="POST">
+<input type="text" th:field="*{firstName}" name="firstName" placeholder="First Name" /> <br />
+<input type="text" th:field="*{lastName}" name="lastName" placeholder="Last Name" /> <br />
+<label for="start">DOB</label>
+<input type="date" id="start" th:field="*{DOB}" name="DOB" placeholder="Date of birth" value="1998-07-24" /> <br />
+
+<label for="gender">Gender:</label>
+
+<select th:field="*{gender}" name="gender" id="gender">
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="Others">Others</option>
+</select> <br/>
+
+
+<input type="text" th:field="*{location}" name="location" placeholder="Location" /> <br />
+<input type="number" th:field="*{experience}" name="experience" placeholder= "Experience" /> <br />
+<input type="text" th:field="*{skills}" name="skills" placeholder="Skills" /> <br />
+<input type="tel" th:field="*{phone}" name="phone" placeholder="Contact Number" pattern="[0-9]{10}" required><br>
+<input type="email" th:field="*{email}" name="email" placeholder= "Email" /> <br />
+<input type="text" th:field="*{pocName}" name="pocName" placeholder= "POC Name" /> <br />
+<input type="email" th:field="*{pocEmail}" name="pocEmail" placeholder= "POC Email" /> <br /><br />
+<input type="submit" value="Submit" /> <br />
+</form> 
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
